@@ -1,0 +1,28 @@
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    display: flex;
+    position: relative;
+}
+.bubbles span{
+    position: relative;
+    width: 1vw;
+    height: 1vw;
+    background-color: rgb(255, 255, 255);
+    margin: 0 1.2vw;
+    border-radius: 60%;
+    box-shadow: 0 0 5px 2px rgba(107, 170, 241, 0.37),0 0 5px 3px #fefeff42;
+    animation: particles 0s linear infinite;
+    animation-duration: calc(250s/var(--i));
+}
+
+
+@keyframes particles {
+    0%{transform: translateY(100vh) scale(0);}
+    100%  {transform: translateY(-10vh) scale(2);}
+    
+}
