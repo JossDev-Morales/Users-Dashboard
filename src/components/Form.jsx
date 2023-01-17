@@ -90,7 +90,12 @@ function onSubmit (data){
     </label>
       
 
-    <button className="btn submit">{newUser==true?"New":"Save"}</button>
+    <button onClick={()=>{
+        switchForm(false)
+        setTimeout(() => {
+            document.querySelector(".form").classList.add("display-none")
+        }, 1000);
+        }} className="btn submit">{newUser==true?"New":"Save"}</button>
     </form>
   );
 }
