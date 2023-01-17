@@ -35,6 +35,10 @@ function onSubmit (data){
         .then(()=>{
             setSucces()
             setTimeout(()=>{location.reload()},3000)
+            switchForm(false)
+            setTimeout(() => {
+            document.querySelector(".form").classList.add("display-none")
+        }, 1000);
         })
         .catch(err=>console.log(err.response.status))
     }else if(newUser==false) {
@@ -42,6 +46,10 @@ function onSubmit (data){
         .then(()=>{
             setSucces()
             setTimeout(()=>{location.reload()},3000)
+            switchForm(false)
+            setTimeout(() => {
+            document.querySelector(".form").classList.add("display-none")
+        }, 1000);
         })
         .catch(error=>console.log(error.response.status+" "+error.response.textEstatus))
     }
@@ -90,12 +98,7 @@ function onSubmit (data){
     </label>
       
 
-    <button onClick={()=>{
-        switchForm(false)
-        setTimeout(() => {
-            document.querySelector(".form").classList.add("display-none")
-        }, 1000);
-        }} className="btn submit">{newUser==true?"New":"Save"}</button>
+    <button className="btn submit">{newUser==true?"New":"Save"}</button>
     </form>
   );
 }
